@@ -1,12 +1,24 @@
 #container {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
 }
 
 .square-div {
-    background-color: blueviolet;
+    background-color: lightgray;
     padding: .5rem;
     aspect-ratio: 1;
+}
+
+.activated {
+    background-color: black;
 }

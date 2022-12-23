@@ -1,32 +1,41 @@
-function createGrid(container, rows) {
+const container = document.querySelector('#container');
+
+function activateSquare(square) {
+    square.classList.add('activated');
+}
+
+function createGrid(rows) {
     let size = rows * rows;
-    for (let i = 0; i < size; i++) {
-        let content = document.createElement('div');
-        content.classList.add('square-div');   
-        container.appendChild(content);
+    for (let i = 0; i < rows; i++) {
+        let row = document.createElement('div');
+        row.classList.add('row');
+        for (let i = 0; i < rows; i++) {
+            let pixel = document.createElement('div');
+            pixel.classList.add('square-div');
+            pixel.addEventListener('mouseover', activateSquare(pixel)); 
+            row.appendChild(pixel);
+        }
+        container.appendChild(row);
     }
 }
 
-function clearGrid(container) {
+createGrid(16);
+
+function clearGrid() {
     while (container.hasChildNodes()) {
         container.removeChild(container.firstChild);
     }
 }
 
-function newGrid(container) {
-    let rows = prompt('How many squares per side?');
+function newGrid(rows) {
     if (rows > 100) return 'Enter a number 100 or less';
-    clearGrid(container);
-    createGrid(container, rows);
+    clearGrid();
+    createGrid(rows);
 }
 
-const container = document.querySelector('#container');
-
-for (let i = 0; i < 256; i++) {
-    let content = document.createElement('div');
-    content.classList.add('square-div');   
-    container.appendChild(content);
+function gridFromInput() {
+    newGrid(prompt('How many squares per side?'));
 }
 
 const btn = document.querySelector('#new-grid')
-btn.addEventListener('click', newGrid(container));
+btn.addEventListener('click', gridFromInput());
