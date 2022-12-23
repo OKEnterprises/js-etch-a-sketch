@@ -1,0 +1,12 @@
+#container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.square-div {
+    background-color: blueviolet;
+    padding: .5rem;
+    aspect-ratio: 1;
+}
