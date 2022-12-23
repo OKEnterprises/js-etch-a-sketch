@@ -12,7 +12,7 @@ function createGrid(rows) {
         for (let i = 0; i < rows; i++) {
             let pixel = document.createElement('div');
             pixel.classList.add('square-div');
-            pixel.addEventListener('mouseover', activateSquare(pixel)); 
+            pixel.addEventListener('mouseover', () => {activateSquare(pixel)}); 
             row.appendChild(pixel);
         }
         container.appendChild(row);
@@ -38,4 +38,6 @@ function gridFromInput() {
 }
 
 const btn = document.querySelector('#new-grid')
-btn.addEventListener('click', gridFromInput());
+btn.addEventListener('click', () => {
+    gridFromInput();
+});

@@ -1,22 +1,20 @@
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    align-items: stretch;
+    gap: .5rem;
 }
 
 .row {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: .5rem;
 }
 
 .square-div {
     background-color: lightgray;
     padding: .5rem;
-    aspect-ratio: 1;
 }
 
 .activated {
