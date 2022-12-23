@@ -10,11 +10,13 @@
     justify-content: stretch;
     align-items: stretch;
     gap: .5rem;
+    width: 960px;
 }
 
 .square-div {
     background-color: lightgray;
     padding: .5rem;
+    width: auto;
 }
 
 .activated {
